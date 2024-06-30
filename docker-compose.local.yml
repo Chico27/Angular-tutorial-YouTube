@@ -1,0 +1,17 @@
+services:
+  angular-tutorial:
+    container_name: angular-web
+    build:
+      context: ./docker-angular
+      dockerfile: Dockerfile
+    # command: 'sh /sh/start.sh'
+    ports:
+      - 4200:4200
+    volumes:
+      - ./docker-angular/sh:/sh/
+      - ./docker-angular/angular-project:/usr/local/angular-project
+      # - angular_node_modules:/usr/local/optamo2_web/node_modules
+    tty: true
+
+volumes:
+  angular_node_modules:
