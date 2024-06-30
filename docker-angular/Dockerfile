@@ -8,5 +8,5 @@ RUN dnf update -y && \
     n 22.3.0 && \
     npm install -g @angular/cli@18.0.6
 
-WORKDIR /usr/local/
+WORKDIR /usr/local/angular-project/
 

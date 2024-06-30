@@ -4,7 +4,7 @@ services:
     build:
       context: ./docker-angular
       dockerfile: Dockerfile
-    # command: 'sh /sh/start.sh'
+    command: 'sh /sh/start.sh'
     ports:
       - 4200:4200
     volumes:
