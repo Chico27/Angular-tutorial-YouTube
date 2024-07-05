@@ -8,5 +8,7 @@ RUN dnf update -y && \
     n 22.3.0 && \
     npm install -g @angular/cli@18.0.6
 
+RUN dnf install which -y
+RUN echo 'export PATH=$HOME/bin:$PATH' >> ~/.bash_profile
 WORKDIR /usr/local/angular-project/
 
