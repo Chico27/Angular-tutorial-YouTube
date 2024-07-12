@@ -19,8 +19,14 @@ export class AppComponent {
     'c': 'test3',
   };
 
+  num = 2;
+
   testNum = 2 + 3;
 
   itemImageUrl: String = 'assets/enhance_logo.PNG';
+
+  calcNum() {
+    return this.num + 3;
+  }
 
 }
