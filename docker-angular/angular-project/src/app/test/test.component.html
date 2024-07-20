@@ -1,1 +1,12 @@
-<p>test works!</p>
+<div>
+    <h3 class="success">class="success" 成功テキスト</h3>
+    <h3 [class] = "successClass">[class] = "successClass" 成功テキスト</h3>
+
+    <h3 [class] = "errorClass">[class] = "errorClass" 失敗テキスト</h3>
+    <h3 [class.error] = "hasError">[class.error] = "hasError" 失敗テキスト</h3>
+
+    <label for="numeric-input">inputに入力された文字列は数値でしょうか:</label><br>
+    <input id="numeric-input" type="number" [value]="numericValue">
+    <h3 [class]="checkClasses">入力されている文字列が数値なら緑、数値以外なら赤になるテキストです</h3>
+    <h3 [class]="checkClassesList">入力されている文字列が数値なら緑、数値以外なら赤になるテキストです</h3>
+</div>
