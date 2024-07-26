@@ -1,12 +1,11 @@
 <div>
-    <h3 class="success">class="success" 成功テキスト</h3>
-    <h3 [class] = "successClass">[class] = "successClass" 成功テキスト</h3>
+    <h3 style="font-size: 30px">style="font-size: 10px" テキスト</h3>
+    <h3 [style.font-size]="fontSize">[style]="fontSize" テキスト</h3>
+    <h3 [style.font-size.rem]="sizeRem">[style.font-size.rem]="sizeRem" テキスト</h3>
 
-    <h3 [class] = "errorClass">[class] = "errorClass" 失敗テキスト</h3>
-    <h3 [class.error] = "hasError">[class.error] = "hasError" 失敗テキスト</h3>
+    <button (click)="handleClick()">クリックするとsizeRemが2倍になります</button>
 
-    <label for="numeric-input">inputに入力された文字列は数値でしょうか:</label><br>
-    <input id="numeric-input" type="number" [value]="numericValue">
-    <h3 [class]="checkClasses">入力されている文字列が数値なら緑、数値以外なら赤になるテキストです</h3>
-    <h3 [class]="checkClassesList">入力されている文字列が数値なら緑、数値以外なら赤になるテキストです</h3>
+    <h3 [style]="stylesString">[style]="stylesString" テキスト</h3>
+    <h3 [style]="stylesDict">[style]="stylesDict" テキスト</h3>
+
 </div>

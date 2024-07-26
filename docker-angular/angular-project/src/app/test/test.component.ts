@@ -8,24 +8,20 @@ import { Component } from '@angular/core';
   styleUrl: './test.component.scss'
 })
 export class TestComponent {
+  fontSize: string = '20px';
+  sizeRem: number = 2;
+  stylesString: string = 'font-size: 25px;color: blue;';
+  stylesDict: object = {
+    fontSize: '40px',
+    color: 'red',
+  };
+  // stylesDict: object = {
+  //   'font-size': '40px',
+  //   'color': 'red',
+  // };
 
-  successClass: string = "success";
-  errorClass: string = "error";
-  hasError: boolean = true;
-
-  numericValue: string = "1";
-
-  checkClasses: Object = {
-    "success": this.isNumeric(this.numericValue),
-    "error": !this.isNumeric(this.numericValue),
-  } 
-  checkClassesList: Object = [
-    this.isNumeric(this.numericValue) ? "success" : "error",
-    "underline"
-  ] 
-
-  isNumeric(value: string): boolean {
-    // 正規表現を使って数値をチェックします。
-    return !isNaN(Number(value)) && value.trim() !== '';
+  handleClick(): void {
+    this.sizeRem = this.sizeRem * 2;
   }
+
 }
