@@ -8,20 +8,15 @@ import { Component } from '@angular/core';
   styleUrl: './test.component.scss'
 })
 export class TestComponent {
-  fontSize: string = '20px';
-  sizeRem: number = 2;
-  stylesString: string = 'font-size: 25px;color: blue;';
-  stylesDict: object = {
-    fontSize: '40px',
-    color: 'red',
-  };
-  // stylesDict: object = {
-  //   'font-size': '40px',
-  //   'color': 'red',
-  // };
+  testMessage: string = '';
 
   handleClick(): void {
-    this.sizeRem = this.sizeRem * 2;
+    console.log('ボタンがクリックされました')
   }
-
+  outptLog(value: string): void {
+    console.log(value)
+  }
+  onAnyKeydown(value: string): void {
+    console.log(value, 'が入力されました')
+  }
 }

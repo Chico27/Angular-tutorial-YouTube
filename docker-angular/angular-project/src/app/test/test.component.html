@@ -1,11 +1,16 @@
 <div>
-    <h3 style="font-size: 30px">style="font-size: 10px" テキスト</h3>
-    <h3 [style.font-size]="fontSize">[style]="fontSize" テキスト</h3>
-    <h3 [style.font-size.rem]="sizeRem">[style.font-size.rem]="sizeRem" テキスト</h3>
+    <div><button (click)="handleClick()">()がイベントバインディングです</button></div>
+    <div><button (click)="testMessage = 'クリックされました'">クリック</button></div>
+    {{ testMessage }}
 
-    <button (click)="handleClick()">クリックするとsizeRemが2倍になります</button>
+    <br>
+    <br>
 
-    <h3 [style]="stylesString">[style]="stylesString" テキスト</h3>
-    <h3 [style]="stylesDict">[style]="stylesDict" テキスト</h3>
-
+    <div>
+        <input #testInput type="text">
+        <button (click)="outptLog(testInput.value)">送信</button>
+    </div>
+    <div>
+        <input (keydown)="onAnyKeydown($event.key)" />
+    </div>
 </div>
