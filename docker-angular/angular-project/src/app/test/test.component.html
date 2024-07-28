@@ -1,15 +1,23 @@
 <div>
-    <div><button (click)="handleClick()">()がイベントバインディングです</button></div>
-    <div><button (click)="testMessage = 'クリックされました'">クリック</button></div>
-    {{ testMessage }}
+    <div><button (click)="message = 'クリックされました'">()がイベントバインディングです</button></div>
+    {{ message }}
 
+    <br>
+    <br>
+    <br>
     <br>
     <br>
 
     <div>
         <input #testInput type="text">
-        <button (click)="outptLog(testInput.value)">送信</button>
+        <button (click)="outputLog(testInput.value)">送信</button>
     </div>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
     <div>
         <input (keydown)="onAnyKeydown($event.key)" />
     </div>

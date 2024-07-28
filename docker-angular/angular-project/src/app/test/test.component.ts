@@ -8,12 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './test.component.scss'
 })
 export class TestComponent {
-  testMessage: string = '';
-
-  handleClick(): void {
-    console.log('ボタンがクリックされました')
+  message: string = 'まだクリックされていません'
+  handleClick(event: Object): void {
+    console.log(event)
   }
-  outptLog(value: string): void {
+  outputLog(value: string): void {
     console.log(value)
   }
   onAnyKeydown(value: string): void {
