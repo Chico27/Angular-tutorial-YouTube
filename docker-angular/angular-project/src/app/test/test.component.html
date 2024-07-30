@@ -1,24 +1,16 @@
 <div>
-    <div><button (click)="message = 'クリックされました'">()がイベントバインディングです</button></div>
-    {{ message }}
-
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-
     <div>
-        <input #testInput type="text">
-        <button (click)="outputLog(testInput.value)">送信</button>
+        <input type="text" [(ngModel)]="message" /><br>
+        {{ message }}
     </div>
 
     <br>
     <br>
     <br>
     <br>
-    <br>
+
     <div>
-        <input (keydown)="onAnyKeydown($event.key)" />
+        <input type="text" [(ngModel)]="fontSize" /><br>
+        <span [style.font-size.px]="fontSize">FontSize: {{fontSize}}px</span>
     </div>
 </div>
