@@ -1,16 +1,46 @@
 <div>
-    <div>
-        <input type="text" [(ngModel)]="message" /><br>
-        {{ message }}
+    <div *ngIf="true">
+        Trueのときにこの文章が見えます
     </div>
 
     <br>
-    <br>
-    <br>
+
+    <div *ngIf="condition">
+        conditionがTrueのときにこの文章が見えます
+    </div>
+    <div *ngIf="!condition">
+        conditionがFalseのときにこの文章が見えます
+    </div>
+
     <br>
 
-    <div>
-        <input type="text" [(ngModel)]="fontSize" /><br>
-        <span [style.font-size.px]="fontSize">FontSize: {{fontSize}}px</span>
-    </div>
+    <ng-template [ngIf]="condition">
+        <div>
+            conditionがTrueのときにこの文章が見えます
+        </div>
+    </ng-template>
+
+    <br>
+
+    <div *ngIf="condition; else elseBlock">conditionがTrueのときにこの文章が見えます</div>
+    <ng-template #elseBlock>
+        <div>elseBlockに入りました</div>
+    </ng-template>
+
+    <br>
+
+    <div *ngIf="condition; then thenBlock else elseBlock"></div>
+    <ng-template #thenBlock>
+        <div>conditionがTrueのときにこの文章が見えます</div>
+    </ng-template>
+    <ng-template #elseBlock>
+        <div>elseBlockに入りました</div>
+    </ng-template>
+
+    <br>
+
+    <div *ngIf="message as value; else elseBlock">{{value}}</div>
+    <ng-template #elseBlock>
+        messageが空です
+    </ng-template>
 </div>
