@@ -9,6 +9,19 @@ import { CommonModule } from '@angular/common';
   styleUrl: './test.component.scss'
 })
 export class TestComponent {
-  condition: boolean = true;
-  message: string = 'これはテストメッセージです';
+  names: string[] = ['佐藤', '田中', '鈴木'];
+  persons: { name: string, age: number }[] = [
+    {
+      name: '佐藤',
+      age: 19
+    },
+    {
+      name: '田中',
+      age: 21
+    },
+    {
+      name: '鈴木',
+      age: 18
+    },
+  ];
 }

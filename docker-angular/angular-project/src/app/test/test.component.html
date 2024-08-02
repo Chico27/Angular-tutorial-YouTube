@@ -1,46 +1,5 @@
 <div>
-    <div *ngIf="true">
-        Trueのときにこの文章が見えます
-    </div>
-
+    <li *ngFor="let name of names; index as i">{{ i }} {{ name }}</li>
     <br>
-
-    <div *ngIf="condition">
-        conditionがTrueのときにこの文章が見えます
-    </div>
-    <div *ngIf="!condition">
-        conditionがFalseのときにこの文章が見えます
-    </div>
-
-    <br>
-
-    <ng-template [ngIf]="condition">
-        <div>
-            conditionがTrueのときにこの文章が見えます
-        </div>
-    </ng-template>
-
-    <br>
-
-    <div *ngIf="condition; else elseBlock">conditionがTrueのときにこの文章が見えます</div>
-    <ng-template #elseBlock>
-        <div>elseBlockに入りました</div>
-    </ng-template>
-
-    <br>
-
-    <div *ngIf="condition; then thenBlock else elseBlock"></div>
-    <ng-template #thenBlock>
-        <div>conditionがTrueのときにこの文章が見えます</div>
-    </ng-template>
-    <ng-template #elseBlock>
-        <div>elseBlockに入りました</div>
-    </ng-template>
-
-    <br>
-
-    <div *ngIf="message as value; else elseBlock">{{value}}</div>
-    <ng-template #elseBlock>
-        messageが空です
-    </ng-template>
+    <li *ngFor="let person of persons">名前：{{ person.name }} 年齢：{{person.age}}</li>
 </div>
