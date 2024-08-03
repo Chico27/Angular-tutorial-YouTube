@@ -1,5 +1,8 @@
 <div>
-    <li *ngFor="let name of names; index as i">{{ i }} {{ name }}</li>
-    <br>
-    <li *ngFor="let person of persons">名前：{{ person.name }} 年齢：{{person.age}}</li>
+    <div [ngSwitch]="role">
+        <div *ngSwitchCase="'admin'">管理者としてログインしています。</div>
+        <div *ngSwitchCase="'user'">ユーザーとしてログインしています。</div>
+        <div *ngSwitchCase="'guest'">ゲストとしてログインしています。</div>
+        <div *ngSwitchDefault>役割が不明です。</div>
+    </div>
 </div>
