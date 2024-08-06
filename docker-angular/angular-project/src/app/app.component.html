@@ -179,7 +179,7 @@
 
 <main class="main">
   <div class="content">
-    <app-test></app-test>
+    <app-test [parentData]="title" (childEvent)="parentFunc($event)"></app-test>
   </div>
 </main>
 

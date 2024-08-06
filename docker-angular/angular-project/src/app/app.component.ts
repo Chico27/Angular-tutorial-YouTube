@@ -13,20 +13,7 @@ import { CommonModule } from '@angular/common';
 export class AppComponent {
   title = 'angular-project';
 
-  testObject: Object = {
-    'a': 'test1',
-    'b': 'test2',
-    'c': 'test3',
-  };
-
-  num = 2;
-
-  testNum = 2 + 3;
-
-  itemImageUrl: String = 'assets/enhance_logo.PNG';
-
-  calcNum() {
-    return this.num + 3;
+  parentFunc(data: string) {
+    console.log(data);
   }
-
 }

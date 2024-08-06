@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,5 +9,11 @@ import { CommonModule } from '@angular/common';
   styleUrl: './test.component.scss'
 })
 export class TestComponent {
-  role: string = 'admin'; // ユーザーの役割を指定
+  @Input() parentData: string = '';
+  // @Input('parentData') test = '';
+  @Output() childEvent = new EventEmitter();
+
+  sendParendEvent() {
+    this.childEvent.emit('ボタンが押されました');
+  }
 }
