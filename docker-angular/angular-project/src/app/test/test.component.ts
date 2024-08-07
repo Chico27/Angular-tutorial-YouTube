@@ -13,7 +13,7 @@ export class TestComponent {
   // @Input('parentData') test = '';
   @Output() childEvent = new EventEmitter();
 
-  sendParendEvent() {
+  sendParentEvent() {
     this.childEvent.emit('ボタンが押されました');
   }
 }
