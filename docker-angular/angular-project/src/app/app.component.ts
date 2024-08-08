@@ -11,9 +11,17 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'angular-project';
+  title: string = 'angular-project';
+  num: number = 0.5;
 
-  parentFunc(data: string) {
-    console.log(data);
+  testObject: Object = {
+    'a': 'test1',
+    'b': 'test2',
+    'c': 'test3',
+  };
+
+  upperTitle() {
+    return this.title.toUpperCase();
   }
+
 }
