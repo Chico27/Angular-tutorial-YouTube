@@ -2,17 +2,11 @@
 
 <main class="main">
   <div class="content">
-    <div>{{ title }}</div>
-    <div>{{ title | uppercase }}</div>
-    <div>{{ title | slice:2:9 }}</div>
-    <div>{{ upperTitle() }}</div>
-    <br>
-    <div>{{ num }}</div>
-    <div>{{ num | number: '3.2-4' }}</div>
-    <div>{{ num | currency }}</div>
-    <br>
-    <div>{{ testObject }}</div>
-    <div>{{ testObject | json }}</div>
+    <input type="text" [(ngModel)]="message" /><br>
+    <div>{{ message }}</div>
+    <div *ngIf="message" >
+      <app-test [parentData]="message"></app-test>
+    </div>
   </div>
 </main>
 
