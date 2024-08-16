@@ -30,7 +30,7 @@ export class TestComponent implements OnInit, OnChanges, OnDestroy {
 
   // コンポーネントが破棄されるときに実行
   ngOnDestroy() {
-    console.log('OnDestroyが呼ばれました');
+    console.log('ngOnDestroyが呼ばれました');
   }
 
 }
