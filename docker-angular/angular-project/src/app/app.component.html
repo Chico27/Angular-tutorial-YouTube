@@ -2,11 +2,7 @@
 
 <main class="main">
   <div class="content">
-    <input type="text" [(ngModel)]="message" /><br>
-    <div>{{ message }}</div>
-    <div *ngIf="message" >
-      <app-test [parentData]="message"></app-test>
-    </div>
+    <app-book-list></app-book-list>
   </div>
 </main>
 
