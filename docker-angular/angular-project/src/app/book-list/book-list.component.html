@@ -1,4 +1,7 @@
 <div>
+    <div *ngIf="errorMessage">
+        {{ errorMessage }}
+    </div>
     <div *ngFor="let book of books">
         <h3>{{ book.name }}</h3>
         <div>著者名：{{ book.author }}</div>

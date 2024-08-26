@@ -14,11 +14,15 @@ import { CommonModule } from '@angular/common';
 export class BookListComponent implements OnInit {
 
   books: IBook[] = [];
+  errorMessage: string = '';
 
   constructor(private _bookService: BookService) {}
 
   ngOnInit(): void {
-    this._bookService.getBooks().subscribe(data => this.books = data);
+    this._bookService.getBooks().subscribe({
+      next: (data: IBook[]) => this.books = data,
+      error: (err: Error) => this.errorMessage = err.message,
+      // complete: () => console.log('Book fetching completed')
+    });
   }
-
 }
