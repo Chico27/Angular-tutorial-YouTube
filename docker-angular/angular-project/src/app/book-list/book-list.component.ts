@@ -1,13 +1,7 @@
 import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { BookService } from '../services/book.service';
+import { IBook } from '../models/books';
 import { CommonModule } from '@angular/common';
-
-type Book = {
-  id: number;
-  name: string;
-  author: string;
-  price: number;
-};
 
 @Component({
   selector: 'app-book-list',
@@ -19,12 +13,12 @@ type Book = {
 
 export class BookListComponent implements OnInit {
 
-  books: Book[] = []
+  books: IBook[] = [];
 
   constructor(private _bookService: BookService) {}
 
   ngOnInit(): void {
-    this.books = this._bookService.getBooks();    
+    this._bookService.getBooks().subscribe(data => this.books = data);
   }
 
 }
