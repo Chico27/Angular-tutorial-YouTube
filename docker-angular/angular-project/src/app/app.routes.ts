@@ -1,8 +1,14 @@
 import { Routes } from '@angular/router';
 import { StoreListComponent } from './store-list/store-list.component';
 import { BookListComponent } from './book-list/book-list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 export const routes: Routes = [
+    {
+        path: '',
+        redirectTo: 'stores',
+        pathMatch: 'full'
+    },
     {
         path: 'stores',
         component: StoreListComponent,
@@ -12,5 +18,10 @@ export const routes: Routes = [
         path: 'books',
         component: BookListComponent,
         title: '書籍一覧'
+    },
+    {
+        path: '**',
+        component: PageNotFoundComponent,
+        title: '404 page'
     },
 ];
