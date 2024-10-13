@@ -2,6 +2,7 @@ import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges } from '@
 import { BookService } from '../services/book.service';
 import { IBook } from '../models/books';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -16,7 +17,10 @@ export class BookListComponent implements OnInit {
   books: IBook[] = [];
   errorMessage: string = '';
 
-  constructor(private _bookService: BookService) {}
+  constructor(
+    private _bookService: BookService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this._bookService.getBooks().subscribe({
@@ -24,5 +28,9 @@ export class BookListComponent implements OnInit {
       error: (err: Error) => this.errorMessage = err.message,
       // complete: () => console.log('Book fetching completed')
     });
+  }
+
+  onSelect(book: IBook) {
+    this.router.navigate(['/books', book.id]);
   }
 }
