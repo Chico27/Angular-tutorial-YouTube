@@ -32,5 +32,6 @@ export class BookListComponent implements OnInit {
 
   onSelect(book: IBook) {
     this.router.navigate(['/books', book.id]);
+
   }
 }

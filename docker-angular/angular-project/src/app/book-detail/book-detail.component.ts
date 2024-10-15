@@ -8,15 +8,13 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.scss'
 })
-export class BookDetailComponent implements OnInit{
+export class BookDetailComponent implements OnInit {
 
   public bookId: number = 0;
-  constructor(private route: ActivatedRoute) {
+  constructor(private route: ActivatedRoute) {}
 
-  }
 
   ngOnInit(): void {
-
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam) {
       this.bookId = parseInt(idParam, 10); 
