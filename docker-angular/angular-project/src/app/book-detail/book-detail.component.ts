@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book-detail',
@@ -11,7 +11,10 @@ import { ActivatedRoute } from '@angular/router';
 export class BookDetailComponent implements OnInit {
 
   public bookId: number = 0;
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
 
 
   ngOnInit(): void {
@@ -21,6 +24,11 @@ export class BookDetailComponent implements OnInit {
     } else {
       console.error('ID parameter is null or undefined');
     }
+  }
+
+  goBack(): void {
+    // this.router.navigate(['/books']);
+    this.router.navigate(['../'], { relativeTo: this.route });
   }
 
 }

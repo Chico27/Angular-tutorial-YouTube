@@ -2,7 +2,7 @@ import { Component, Input, OnInit, OnChanges, OnDestroy, SimpleChanges } from '@
 import { BookService } from '../services/book.service';
 import { IBook } from '../models/books';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-book-list',
@@ -19,7 +19,8 @@ export class BookListComponent implements OnInit {
 
   constructor(
     private _bookService: BookService,
-    private router: Router
+    private router: Router,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -31,7 +32,7 @@ export class BookListComponent implements OnInit {
   }
 
   onSelect(book: IBook) {
-    this.router.navigate(['/books', book.id]);
-
+    // this.router.navigate(['/books', book.id]);
+    this.router.navigate([book.id], { relativeTo: this.route });
   }
 }
