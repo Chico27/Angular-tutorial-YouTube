@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-book-detail',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './book-detail.component.html',
   styleUrl: './book-detail.component.scss'
 })
@@ -29,6 +29,14 @@ export class BookDetailComponent implements OnInit {
   goBack(): void {
     // this.router.navigate(['/books']);
     this.router.navigate(['../'], { relativeTo: this.route });
+  }
+
+  showStory(): void {
+    this.router.navigate(['story'], { relativeTo: this.route });
+  }
+
+  showCharacter(): void {
+    this.router.navigate(['character'], { relativeTo: this.route });
   }
 
 }

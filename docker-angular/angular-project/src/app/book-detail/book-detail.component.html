@@ -1,2 +1,7 @@
 <p>選択した書籍のIDは{{bookId}}です</p>
+<p>
+    <button (click)="showStory()">ストーリー</button>
+    <button (click)="showCharacter()">キャラクター</button>
+</p>
+<router-outlet />
 <button (click)="goBack()">戻る</button>
